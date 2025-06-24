@@ -17,300 +17,288 @@
       min-height: 100vh;
       padding: 20px;
       color: #333;
+      font-size: 2rem; /* Texto al doble del tamaño normal */
     }
     
     .container {
       max-width: 900px;
       margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
     }
     
-    .color-header {
-      text-align: center;
-      margin-bottom: 40px;
-      background: rgba(255, 255, 255, 0.1);
-      padding: 30px;
+    .section-card {
+      background: rgba(255, 255, 255, 0.95);
       border-radius: 20px;
+      padding: 40px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
       backdrop-filter: blur(10px);
       border: 1px solid rgba(255,255,255,0.2);
+      text-align: center;
     }
     
     .color-title {
-      font-size: 3rem;
-      color: white;
-      text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-      margin-bottom: 10px;
-    }
-    
-    .color-subtitle {
-      color: rgba(255,255,255,0.9);
-      font-size: 1.2rem;
-      font-weight: 300;
-    }
-    
-    .color-display {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 30px;
+      font-size: 4rem; /* Doble del tamaño */
+      color: #2c3e50;
       margin-bottom: 30px;
+      font-weight: 600;
     }
     
-    .color-preview-section {
-      background: rgba(255, 255, 255, 0.95);
-      border-radius: 20px;
-      padding: 30px;
-      text-align: center;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(255,255,255,0.2);
+    .color-display-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 40px;
     }
     
     .color-preview-large {
-      width: 150px;
-      height: 150px;
+      width: 200px;
+      height: 200px;
       border-radius: 50%;
-      margin: 0 auto 20px;
       border: 5px solid white;
       box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+      flex-shrink: 0;
     }
     
     .color-hex {
-      font-size: 1.2rem;
+      font-size: 2.4rem; /* Doble del tamaño */
       font-weight: 600;
       color: #2c3e50;
-      margin-bottom: 15px;
+      font-family: monospace;
+      background: #f8f9fa;
+      padding: 15px 25px;
+      border-radius: 12px;
+      cursor: pointer;
+      user-select: all;
+      transition: background-color 0.3s ease;
+      display: inline-block;
     }
     
-    .color-composition {
-      background: rgba(255, 255, 255, 0.95);
-      border-radius: 20px;
-      padding: 30px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(255,255,255,0.2);
+    .color-hex:hover {
+      background: #e9ecef;
     }
     
-    .composition-title {
-      font-size: 1.5rem;
+    .section-title {
+      font-size: 3rem; /* Doble del tamaño */
       color: #2c3e50;
-      margin-bottom: 20px;
-      text-align: center;
+      margin-bottom: 30px;
       font-weight: 600;
+    }
+    
+    .complementary-preview {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      border: 4px solid white;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+      flex-shrink: 0;
+    }
+    
+    .complementary-hex {
+      font-size: 2.2rem; /* Doble del tamaño */
+      font-family: monospace;
+      color: #2c3e50;
+      font-weight: 600;
+      background: #f8f9fa;
+      padding: 15px 25px;
+      border-radius: 12px;
+      cursor: pointer;
+      user-select: all;
+      transition: background-color 0.3s ease;
+      display: inline-block;
+    }
+    
+    .complementary-hex:hover {
+      background: #e9ecef;
+    }
+    
+    .neutral-mix {
+      font-size: 2rem; /* Doble del tamaño */
+      color: #666;
+      background: #f8f9fa;
+      padding: 25px;
+      border-radius: 12px;
+      line-height: 1.4;
     }
     
     .composition-bars {
       display: flex;
       flex-direction: column;
-      gap: 15px;
+      gap: 25px;
+      text-align: left;
     }
     
     .composition-bar {
       display: flex;
       align-items: center;
-      gap: 15px;
+      gap: 20px;
     }
     
     .bar-label {
-      width: 80px;
+      width: 160px;
       font-weight: 600;
       color: #2c3e50;
+      font-size: 2rem; /* Doble del tamaño */
     }
     
     .bar-container {
       flex: 1;
-      height: 20px;
+      height: 30px;
       background: #e0e0e0;
-      border-radius: 10px;
+      border-radius: 15px;
       overflow: hidden;
       position: relative;
     }
     
     .bar-fill {
       height: 100%;
-      border-radius: 10px;
+      border-radius: 15px;
       transition: width 0.8s ease;
     }
     
     .bar-value {
-      width: 50px;
+      width: 100px;
       text-align: right;
       font-weight: 600;
       color: #666;
+      font-size: 2rem; /* Doble del tamaño */
     }
     
-    .complementary-section {
-      background: rgba(255, 255, 255, 0.95);
-      border-radius: 20px;
-      padding: 30px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(255,255,255,0.2);
-      margin-bottom: 30px;
+    /* Tooltip para copiar */
+    .copy-tooltip {
+      position: relative;
     }
     
-    .complementary-title {
-      font-size: 1.5rem;
-      color: #2c3e50;
-      margin-bottom: 20px;
-      text-align: center;
-      font-weight: 600;
-    }
-    
-    .complementary-content {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 30px;
-      align-items: center;
-    }
-    
-    .complementary-info {
-      text-align: center;
-    }
-    
-    .complementary-display {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 15px;
-    }
-    
-    .complementary-preview {
-      width: 80px;
-      height: 80px;
-      border-radius: 50%;
-      border: 4px solid white;
-      box-shadow: 0 6px 15px rgba(0,0,0,0.2);
-    }
-    
-    .complementary-color {
-      font-size: 1.3rem;
-      font-weight: 600;
-      color: #2c3e50;
-      margin-bottom: 5px;
-    }
-    
-    .complementary-hex {
-      font-size: 1.1rem;
-      font-family: monospace;
-      color: #666;
-      font-weight: 600;
-      background: #f8f9fa;
-      padding: 8px 12px;
-      border-radius: 8px;
-    }
-    
-    .neutral-section {
-      text-align: center;
-    }
-    
-    .neutral-mix {
-      font-size: 1rem;
-      color: #666;
-      background: #f8f9fa;
-      padding: 15px;
-      border-radius: 10px;
-      margin-top: 10px;
-    }
-    
-    .back-button {
-      position: fixed;
-      top: 20px;
-      left: 20px;
-      background: rgba(255,255,255,0.2);
-      border: 2px solid rgba(255,255,255,0.3);
+    .copy-tooltip::after {
+      content: "Clic para copiar";
+      position: absolute;
+      bottom: -40px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #333;
       color: white;
-      padding: 12px 20px;
-      border-radius: 25px;
+      padding: 5px 10px;
+      border-radius: 5px;
       font-size: 1rem;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      backdrop-filter: blur(10px);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      pointer-events: none;
+      white-space: nowrap;
     }
     
-    .back-button:hover {
-      background: rgba(255,255,255,0.3);
-      transform: scale(1.05);
+    .copy-tooltip:hover::after {
+      opacity: 1;
     }
     
     @media (max-width: 768px) {
-      .color-display {
-        grid-template-columns: 1fr;
-        gap: 20px;
-      }
-      
-      .complementary-content {
-        grid-template-columns: 1fr;
-        gap: 15px;
+      body {
+        font-size: 1.5rem;
+        padding: 15px;
       }
       
       .color-title {
+        font-size: 3rem;
+      }
+      
+      .section-title {
         font-size: 2.5rem;
       }
       
+      .color-display-row {
+        flex-direction: column;
+        gap: 20px;
+      }
+      
+      .color-hex {
+        font-size: 1.8rem;
+        padding: 12px 20px;
+      }
+      
+      .complementary-hex {
+        font-size: 1.6rem;
+        padding: 12px 20px;
+      }
+      
       .color-preview-large {
+        width: 150px;
+        height: 150px;
+      }
+      
+      .complementary-preview {
+        width: 100px;
+        height: 100px;
+      }
+      
+      .bar-label {
         width: 120px;
-        height: 120px;
+        font-size: 1.5rem;
+      }
+      
+      .bar-value {
+        width: 80px;
+        font-size: 1.5rem;
+      }
+      
+      .neutral-mix {
+        font-size: 1.5rem;
+        padding: 20px;
       }
     }
   </style>
 </head>
 <body>
-  <button class="back-button" onclick="window.history.back()">← Volver</button>
-  
   <div class="container">
-    <div class="color-header">
+    <!-- Sección del Color Principal -->
+    <div class="section-card">
       <h1 class="color-title" id="colorName">Color</h1>
-      <p class="color-subtitle">Análisis detallado de composición</p>
-    </div>
-    
-    <div class="color-display">
-      <div class="color-preview-section">
+      <div class="color-display-row">
         <div class="color-preview-large" id="colorPreview"></div>
-        <div class="color-hex" id="colorHex">#000000</div>
-      </div>
-      
-      <div class="color-composition">
-        <h3 class="composition-title">Composición RYB</h3>
-        <div class="composition-bars">
-          <div class="composition-bar">
-            <div class="bar-label">Rojo</div>
-            <div class="bar-container">
-              <div class="bar-fill" id="redBar" style="background: linear-gradient(90deg, #ff4757, #ff6b7a);"></div>
-            </div>
-            <div class="bar-value" id="redValue">0%</div>
-          </div>
-          
-          <div class="composition-bar">
-            <div class="bar-label">Amarillo</div>
-            <div class="bar-container">
-              <div class="bar-fill" id="yellowBar" style="background: linear-gradient(90deg, #feca57, #ff9ff3);"></div>
-            </div>
-            <div class="bar-value" id="yellowValue">0%</div>
-          </div>
-          
-          <div class="composition-bar">
-            <div class="bar-label">Azul</div>
-            <div class="bar-container">
-              <div class="bar-fill" id="blueBar" style="background: linear-gradient(90deg, #3742fa, #70a1ff);"></div>
-            </div>
-            <div class="bar-value" id="blueValue">0%</div>
-          </div>
-        </div>
+        <div class="color-hex copy-tooltip" id="colorHex" onclick="copyToClipboard(this.innerText)">#000000</div>
       </div>
     </div>
     
-    <div class="complementary-section">
-      <h3 class="complementary-title">Información Complementaria</h3>
-      <div class="complementary-content">
-        <div class="complementary-info">
-          <div class="complementary-display">
-            <h4 style="color: #2c3e50; margin-bottom: 10px;">Color Complementario</h4>
-            <div class="complementary-preview" id="complementaryPreview"></div>
-            <div class="complementary-hex" id="complementaryHex">#000000</div>
+    <!-- Sección del Color Complementario -->
+    <div class="section-card">
+      <h3 class="section-title">Complementario</h3>
+      <div class="color-display-row">
+        <div class="complementary-preview" id="complementaryPreview"></div>
+        <div class="complementary-hex copy-tooltip" id="complementaryHex" onclick="copyToClipboard(this.innerText)">#000000</div>
+      </div>
+    </div>
+    
+    <!-- Sección de Mezcla para Neutros -->
+    <div class="section-card">
+      <h3 class="section-title">Mezcla para Neutros</h3>
+      <div class="neutral-mix" id="neutralMix">Mezcla para neutros</div>
+    </div>
+    
+    <!-- Sección de Composición RYB -->
+    <div class="section-card">
+      <h3 class="section-title">Composición RYB</h3>
+      <div class="composition-bars">
+        <div class="composition-bar">
+          <div class="bar-label">Rojo</div>
+          <div class="bar-container">
+            <div class="bar-fill" id="redBar" style="background: linear-gradient(90deg, #ff4757, #ff6b7a);"></div>
           </div>
+          <div class="bar-value" id="redValue">0%</div>
         </div>
-        <div class="neutral-section">
-          <h4 style="color: #2c3e50; margin-bottom: 10px;">Mezcla para Neutros</h4>
-          <div class="neutral-mix" id="neutralMix">Mezcla para neutros</div>
+        
+        <div class="composition-bar">
+          <div class="bar-label">Amarillo</div>
+          <div class="bar-container">
+            <div class="bar-fill" id="yellowBar" style="background: linear-gradient(90deg, #feca57, #ff9ff3);"></div>
+          </div>
+          <div class="bar-value" id="yellowValue">0%</div>
+        </div>
+        
+        <div class="composition-bar">
+          <div class="bar-label">Azul</div>
+          <div class="bar-container">
+            <div class="bar-fill" id="blueBar" style="background: linear-gradient(90deg, #3742fa, #70a1ff);"></div>
+          </div>
+          <div class="bar-value" id="blueValue">0%</div>
         </div>
       </div>
     </div>
@@ -318,6 +306,20 @@
 
   <script src="script.js"></script>
   <script>
+    // Función para copiar al portapapeles
+    function copyToClipboard(text) {
+      navigator.clipboard.writeText(text).then(function() {
+        // Mostrar feedback visual
+        const originalBg = event.target.style.backgroundColor;
+        event.target.style.backgroundColor = '#d4edda';
+        setTimeout(() => {
+          event.target.style.backgroundColor = originalBg;
+        }, 300);
+      }).catch(function(err) {
+        console.error('Error al copiar: ', err);
+      });
+    }
+    
     // Función para convertir porcentajes RYB a RGB aproximado
     function ryb2rgb(r, y, b) {
       const rNorm = r / 100;
