@@ -84,69 +84,25 @@
       background: rgba(255, 255, 255, 1);
     }
     
+    .color-content {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+    
     .color-name {
       font-size: 1.4rem;
       font-weight: 600;
       color: #2c3e50;
-      margin-bottom: 8px;
-      text-align: center;
-    }
-    
-    .color-info {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-top: 15px;
-      padding-top: 15px;
-      border-top: 1px solid rgba(0,0,0,0.1);
     }
     
     .color-preview {
-      width: 40px;
-      height: 40px;
+      width: 50px;
+      height: 50px;
       border-radius: 50%;
       border: 3px solid white;
       box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    }
-    
-    .complementary-section {
-      text-align: right;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-end;
-      gap: 8px;
-    }
-    
-    .complementary-info {
-      font-size: 0.9rem;
-      color: #666;
-    }
-    
-    .complementary-label {
-      font-weight: 500;
-      color: #2c3e50;
-      margin-bottom: 5px;
-    }
-    
-    .complementary-preview {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-    
-    .complementary-color-circle {
-      width: 25px;
-      height: 25px;
-      border-radius: 50%;
-      border: 2px solid white;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-    }
-    
-    .complementary-hex {
-      font-size: 0.8rem;
-      font-family: monospace;
-      color: #555;
-      font-weight: 600;
+      flex-shrink: 0;
     }
     
     @media (max-width: 768px) {
@@ -161,6 +117,11 @@
       
       .color-card {
         padding: 20px;
+      }
+      
+      .color-preview {
+        width: 40px;
+        height: 40px;
       }
     }
   </style>
@@ -205,20 +166,6 @@
       return "#" + toHex(r) + toHex(g) + toHex(b);
     }
     
-    // Función para calcular el color complementario real
-    function getComplementaryColor(r, g, b) {
-      // Método de complementario por inversión en el círculo cromático
-      const max = Math.max(r, g, b);
-      const min = Math.min(r, g, b);
-      const sum = max + min;
-      
-      return {
-        r: Math.max(0, Math.min(255, sum - r)),
-        g: Math.max(0, Math.min(255, sum - g)),
-        b: Math.max(0, Math.min(255, sum - b))
-      };
-    }
-    
     const params = new URLSearchParams(window.location.search);
     const category = params.get("cat");
     document.getElementById("categoryTitle").innerText = category;
@@ -230,21 +177,11 @@
       card.className = "color-card";
       
       const colorRgb = ryb2rgb(color.rojo, color.amarillo, color.azul);
-      const colorHex = rgb2hex(colorRgb.r, colorRgb.g, colorRgb.b);
-      const complementaryRgb = getComplementaryColor(colorRgb.r, colorRgb.g, colorRgb.b);
-      const complementaryHex = rgb2hex(complementaryRgb.r, complementaryRgb.g, complementaryRgb.b);
       
       card.innerHTML = `
-        <div class="color-name">${color.nombre}</div>
-        <div class="color-info">
+        <div class="color-content">
           <div class="color-preview" style="background-color: rgb(${colorRgb.r}, ${colorRgb.g}, ${colorRgb.b})"></div>
-          <div class="complementary-section">
-            <div class="complementary-label">Complementario:</div>
-            <div class="complementary-preview">
-              <div class="complementary-color-circle" style="background-color: rgb(${complementaryRgb.r}, ${complementaryRgb.g}, ${complementaryRgb.b})"></div>
-              <div class="complementary-hex">${complementaryHex}</div>
-            </div>
-          </div>
+          <div class="color-name">${color.nombre}</div>
         </div>
       `;
       
